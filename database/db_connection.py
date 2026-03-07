@@ -1,5 +1,5 @@
 import psycopg2
-from config.config import *
+from config.config import  *    # Import all config variables
 
 def get_connection():
     conn = psycopg2.connect(
