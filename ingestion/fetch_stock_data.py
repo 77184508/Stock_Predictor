@@ -10,7 +10,7 @@ def fetch_stock_data(symbol):
 
     if last_date is None:
         # first run
-        data = yf.download(symbol, period="1mo", interval="1d")
+        data = yf.download(symbol, period="6mo", interval="1d")
     else:
         start_date = last_date + timedelta(days=1)
 
