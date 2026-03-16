@@ -10,9 +10,9 @@ def fetch_stock_data(symbol):
 
     if last_date is None:
         # first run
-        data = yf.download(symbol, period="6mo", interval="1d")
+        data = yf.download(symbol, period="2y", interval="1d")
     else:
-        start_date = last_date + timedelta(days=1)
+        start_date = last_date 
 
         data = yf.download(
             symbol,
@@ -68,7 +68,6 @@ def get_last_date(symbol):
     )
 
     result = cursor.fetchone()[0]
-    print(result)
     cursor.close()
     conn.close()
 
@@ -81,3 +80,6 @@ def run_ingestion():
 
 if __name__ == "__main__":
     run_ingestion()
+    
+    
+#if the last day fetched was friday, then the next day for which assumption is to be made should be 3 days ahead(monday)
