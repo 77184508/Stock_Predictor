@@ -1,0 +1,2 @@
+# Ignore non-DAG paths to speed up DAG parsing
+^Pipeline/sklearn-env(/.*)?$

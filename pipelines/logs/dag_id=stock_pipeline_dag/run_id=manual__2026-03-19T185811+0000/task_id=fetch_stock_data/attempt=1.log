@@ -1,0 +1,27 @@
+[2026-03-19T18:58:24.049+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-19T18:58:24.129+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_pipeline_dag.fetch_stock_data manual__2026-03-19T18:58:11+00:00 [queued]>
+[2026-03-19T18:58:24.147+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_pipeline_dag.fetch_stock_data manual__2026-03-19T18:58:11+00:00 [queued]>
+[2026-03-19T18:58:24.148+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-03-19T18:58:24.199+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_stock_data> on 2026-03-19 18:58:11+00:00
+[2026-03-19T18:58:24.286+0000] {standard_task_runner.py:64} INFO - Started process 183 to run task
+[2026-03-19T18:58:24.360+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_pipeline_dag', 'fetch_stock_data', 'manual__2026-03-19T18:58:11+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipelines_dag.py', '--cfg-path', '/tmp/tmp6ldczwlk']
+[2026-03-19T18:58:24.390+0000] {standard_task_runner.py:91} INFO - Job 38: Subtask fetch_stock_data
+[2026-03-19T18:58:24.980+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_pipeline_dag.fetch_stock_data manual__2026-03-19T18:58:11+00:00 [running]> on host 43050641e3f2
+[2026-03-19T18:58:25.239+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_pipeline_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-19T18:58:11+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-19T18:58:11+00:00'
+[2026-03-19T18:58:25.242+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-19T18:58:39.393+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:40.202+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:40.963+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:42.145+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:42.903+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:43.505+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:44.028+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:44.590+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:45.163+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:45.661+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:58:45.716+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-19T18:58:45.720+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-19T18:58:45.756+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_pipeline_dag, task_id=fetch_stock_data, run_id=manual__2026-03-19T18:58:11+00:00, execution_date=20260319T185811, start_date=20260319T185824, end_date=20260319T185845
+[2026-03-19T18:58:46.089+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-19T18:58:46.532+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-19T18:58:46.551+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

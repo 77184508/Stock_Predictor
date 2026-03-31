@@ -1,0 +1,27 @@
+[2026-03-19T18:06:27.282+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-19T18:06:27.536+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_pipeline_dag.fetch_stock_data manual__2026-03-19T18:00:48.576566+00:00 [queued]>
+[2026-03-19T18:06:27.559+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_pipeline_dag.fetch_stock_data manual__2026-03-19T18:00:48.576566+00:00 [queued]>
+[2026-03-19T18:06:27.560+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-03-19T18:06:27.603+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_stock_data> on 2026-03-19 18:00:48.576566+00:00
+[2026-03-19T18:06:27.622+0000] {standard_task_runner.py:64} INFO - Started process 247 to run task
+[2026-03-19T18:06:27.636+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_pipeline_dag', 'fetch_stock_data', 'manual__2026-03-19T18:00:48.576566+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipelines_dag.py', '--cfg-path', '/tmp/tmpq8jhouqq']
+[2026-03-19T18:06:27.643+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask fetch_stock_data
+[2026-03-19T18:06:27.812+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_pipeline_dag.fetch_stock_data manual__2026-03-19T18:00:48.576566+00:00 [running]> on host 43050641e3f2
+[2026-03-19T18:06:32.070+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_pipeline_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-19T18:00:48.576566+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-19T18:00:48.576566+00:00'
+[2026-03-19T18:06:32.073+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-19T18:06:37.213+0000] {cache.py:132} INFO - Failed to create TzCache, reason: Error creating TzCache folder: '/home/***/.cache/py-yfinance' reason: [Errno 17] File exists: '/home/***/.cache/py-yfinance'. TzCache will not be used. Tip: You can direct cache to use a different location with 'set_tz_cache_location(mylocation)'
+[2026-03-19T18:06:40.714+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:43.340+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:45.251+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:46.974+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:48.297+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:51.465+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:53.110+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:54.409+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:57.040+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:58.406+0000] {logging_mixin.py:188} WARNING - [*********************100%***********************]  1 of 1 completed
+[2026-03-19T18:06:59.076+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-19T18:06:59.218+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-19T18:07:00.397+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_pipeline_dag, task_id=fetch_stock_data, run_id=manual__2026-03-19T18:00:48.576566+00:00, execution_date=20260319T180048, start_date=20260319T180627, end_date=20260319T180700
+[2026-03-19T18:07:02.976+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-19T18:07:03.675+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,46 @@
+[2026-03-19T19:06:16.582+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-03-19T19:06:16.750+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_pipeline_dag.train_model manual__2026-03-19T18:58:11+00:00 [up_for_retry]>
+[2026-03-19T19:06:16.751+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_pipeline_dag.train_model manual__2026-03-19T18:58:11+00:00 [up_for_retry]>
+[2026-03-19T19:06:16.753+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-03-19T19:06:16.809+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_model> on 2026-03-19 18:58:11+00:00
+[2026-03-19T19:06:16.847+0000] {standard_task_runner.py:64} INFO - Started process 346 to run task
+[2026-03-19T19:06:16.877+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_pipeline_dag', 'train_model', 'manual__2026-03-19T18:58:11+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipelines_dag.py', '--cfg-path', '/tmp/tmpt51ze72o']
+[2026-03-19T19:06:16.901+0000] {standard_task_runner.py:91} INFO - Job 42: Subtask train_model
+[2026-03-19T19:06:17.281+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_pipeline_dag.train_model manual__2026-03-19T18:58:11+00:00 [running]> on host 43050641e3f2
+[2026-03-19T19:06:17.548+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_pipeline_dag' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2026-03-19T18:58:11+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-19T18:58:11+00:00'
+[2026-03-19T19:06:17.559+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-03-19T19:06:32.210+0000] {logging_mixin.py:188} INFO - Loading features...
+[2026-03-19T19:06:32.291+0000] {logging_mixin.py:188} WARNING - /opt/***/project/models/train_model.py:31 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2026-03-19T19:06:32.522+0000] {logging_mixin.py:188} INFO - Preparing dataset...
+[2026-03-19T19:06:32.558+0000] {logging_mixin.py:188} INFO - Splitting dataset...
+[2026-03-19T19:06:32.561+0000] {logging_mixin.py:188} INFO - Training model...
+[2026-03-19T19:06:32.562+0000] {logging_mixin.py:188} INFO - Using XGBoost model
+[2026-03-19T19:07:00.498+0000] {logging_mixin.py:188} INFO - Evaluating model...
+[2026-03-19T19:07:00.650+0000] {logging_mixin.py:188} INFO - 
+Model Performance
+[2026-03-19T19:07:00.651+0000] {logging_mixin.py:188} INFO - -----------------
+[2026-03-19T19:07:00.651+0000] {logging_mixin.py:188} INFO - MAE: 0.018701836007701925
+[2026-03-19T19:07:00.652+0000] {logging_mixin.py:188} INFO - MSE: 0.0007137092592235262
+[2026-03-19T19:07:00.664+0000] {logging_mixin.py:188} INFO - 
+Feature Importance
+[2026-03-19T19:07:00.665+0000] {logging_mixin.py:188} INFO - ------------------
+[2026-03-19T19:07:00.678+0000] {logging_mixin.py:188} INFO - lag_1         0.132947
+lag_10        0.123850
+momentum      0.121859
+lag_5         0.114918
+volatility    0.109418
+ma_7          0.106336
+return_1d     0.103963
+ma_21         0.096859
+close         0.089850
+dtype: float32
+[2026-03-19T19:07:00.738+0000] {logging_mixin.py:188} INFO - 
+Model saved to /opt/***/project/models/model.pkl
+[2026-03-19T19:07:00.740+0000] {logging_mixin.py:188} INFO - 
+Training completed.
+[2026-03-19T19:07:00.755+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-03-19T19:07:00.760+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-03-19T19:07:00.868+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_pipeline_dag, task_id=train_model, run_id=manual__2026-03-19T18:58:11+00:00, execution_date=20260319T185811, start_date=20260319T190616, end_date=20260319T190700
+[2026-03-19T19:07:01.082+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-03-19T19:07:01.248+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-19T19:07:01.253+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
