@@ -7,8 +7,9 @@ services:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
+      TZ: Asia/Kolkata
     ports:
-      - "5433:5432"
+      - "5434:5432"
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
@@ -92,6 +93,38 @@ services:
       bash -c "
       sleep 20 &&
       airflow scheduler
+      "
+    restart: always
+
+  api:
+    build: .
+    container_name: stock_predictor_api
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-scheduler:
+        condition: service_started
+    ports:
+      - "8000:8000"
+    environment:
+      PYTHONPATH: /opt/airflow/project
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: stock_db
+      DB_USER: airflow
+      DB_PASSWORD: airflow
+      AIRFLOW_BASE_URL: http://airflow-webserver:8080
+      AIRFLOW_USERNAME: airflow
+      AIRFLOW_PASSWORD: airflow
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./dags/Pipeline:/opt/airflow/project
+    command: >
+      bash -c "
+      cd /opt/airflow/project/api &&
+      python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
       "
     restart: always
 

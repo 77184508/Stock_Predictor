@@ -28,6 +28,9 @@ def fetch_stock_data(symbol):
     return data
 def store_data(df):
     conn = get_connection()
+    if conn is None:
+        raise ConnectionError("Database connection is not available")
+
     cursor = conn.cursor()
 
     insert_query = """

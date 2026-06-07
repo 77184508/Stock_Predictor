@@ -5,3 +5,7 @@ python-dotenv
 xgboost
 scikit-learn
 joblib
+fastapi
+uvicorn
+requests
+pydantic

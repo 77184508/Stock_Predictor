@@ -1,4 +1,0 @@
-*.pkl
-__pycache__/
-*.pyc
-sklearn-env/
